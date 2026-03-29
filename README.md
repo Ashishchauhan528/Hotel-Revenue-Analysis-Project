@@ -1,15 +1,21 @@
 # 🏨 Hotel Revenue Analytics Dashboard
 ### Infosys Springboard Virtual Internship 6.0
 
+---
+
 ## 📌 Project Overview
 
 This project was developed as part of the **Infosys Springboard Virtual Internship 6.0** program. The objective is to build a comprehensive **Hotel Revenue Analytics Dashboard** using Power BI, covering data generation, data modeling, KPI analysis, customer segmentation, and RFM (Recency, Frequency, Monetary) analysis for a hotel chain operating across multiple branches in India.
 
 The dataset was self-generated to simulate real-world hotel operations across 15 branches and 4,000+ customers, covering booking data from 2023 to 2026.
 
-Submitted By
+---
+
+## 👤 Submitted By
 **Ashish Chauhan**
 Infosys Springboard Virtual Internship 6.0
+
+---
 
 ## 🗂️ Project Structure
 
@@ -19,6 +25,7 @@ Hotel-Revenue-Analytics/
 ├── Module_1/       → Data Generation, Data Modeling & Star Schema
 ├── Module_2/       → KPI Calculations, Master Data & Dashboard Page 1
 ├── Module_3/       → Guest Segmentation & RFM Analysis
+├── Module_4/       → Forecasting & Cancellation Trend Analysis
 └── README.md
 ```
 
@@ -68,6 +75,29 @@ The dataset was self-generated and consists of **6 interlinked tables** structur
   - 📈 Occupancy % by Month visual
   - 🔽 Year Slicer (2023–2026)
 
+### Module 4 — Forecasting & Cancellation Trend Analysis
+- **Objective:** Analyze hotel booking patterns to identify operational and financial inefficiencies using forecasting and trend analysis
+- **New DAX Measures Created:**
+  - `CancellationFlag` — classifies each booking as Cancelled (Yes) or Not (No)
+  - `CancellationRate` — ratio of cancelled bookings to total bookings
+  - `RefundAmount` — revenue lost due to cancelled bookings
+  - `RefundFlag` — identifies bookings that resulted in a refund
+  - `NoShowFlag` — identifies guests who did not arrive despite confirmed booking
+  - `NoShowCount` — total count of no-show bookings
+  - `NoShowRate` — percentage of no-shows out of total bookings
+  - `RoomRate` — room price pulled from Rooms table using RELATED()
+  - `DADR` — Derived Average Daily Rate based on room pricing
+- **4 Visualizations on new dashboard page "Forecasting & Cancellation Trends":**
+  - 📈 **Booking Demand Forecast** — historical booking trends with 7-month forecast (95% confidence interval) using Power BI built-in forecasting
+  - 📈 **Cancellation Rate Trend** — monthly cancellation rate variation showing seasonal patterns
+  - 📊 **Booking Distribution by Lead Time** — how far in advance customers book rooms
+  - 📊 **Monthly Refund Amount vs No-Show Rate** — combo chart comparing financial loss vs operational inefficiency
+- **Key Insights:**
+  - Booking demand is stable but lacks strong growth — promotional campaigns needed
+  - Cancellation rates fluctuate seasonally — stricter policies recommended
+  - Mid-range lead time bookings dominate — opportunity for early booking discounts
+  - Refunds and no-shows significantly impact revenue — partial refund policies suggested
+
 ### Module 3 — Guest Segmentation & RFM Analysis
 - **Objective:** Analyze guest behavior to identify valuable customers and support business decision-making
 - **Guest Type Segmentation:** Created `GuestType` calculated column using DAX (`SWITCH`, `CALCULATE`) classifying guests as Business, Family, Corporate, or Solo
@@ -110,6 +140,9 @@ The dataset was self-generated and consists of **6 interlinked tables** structur
 - **RevPAR (Revenue Per Available Room)** — Revenue efficiency metric combining pricing and occupancy
 - **Occupancy %** — Percentage of available rooms that are filled
 - **RFM Score** — Customer value score based on Recency, Frequency, Monetary behavior
+- **CancellationRate** — Ratio of cancelled to total bookings
+- **NoShowRate** — Percentage of no-show bookings
+- **RefundAmount** — Total revenue lost due to cancellations
 
 ---
 
@@ -131,14 +164,13 @@ The dataset was self-generated and consists of **6 interlinked tables** structur
 | Domain | Data Analytics & Business Intelligence |
 | Tool | Power BI |
 | Duration | Mar 2026 – Apr 2026 |
-| Modules Completed | 3 of 6 (Dashboard & Documentation in progress) |
+| Modules Completed | 4 of 6 (Final Dashboard & Documentation in progress) |
 
 ---
 
-## 🚀 Upcoming (Module 4–6)
-- Advanced dashboard pages (branch-level, room-type analysis)
-- Final interactive dashboard with complete drill-through
-- Project documentation and final presentation
+## 🚀 Upcoming (Module 5–6)
+- Final interactive dashboard with complete drill-through and branch-level analysis
+- Project documentation and final presentation to external mentors
 
 ---
 
