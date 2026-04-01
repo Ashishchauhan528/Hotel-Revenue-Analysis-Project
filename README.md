@@ -26,6 +26,7 @@ Hotel-Revenue-Analytics/
 ├── Module_2/       → KPI Calculations, Master Data & Dashboard Page 1
 ├── Module_3/       → Guest Segmentation & RFM Analysis
 ├── Module_4/       → Forecasting & Cancellation Trend Analysis
+├── Module_5/       → Dynamic Pricing & Ancillary Revenue Analysis
 └── README.md
 ```
 
@@ -120,9 +121,28 @@ The dataset was self-generated and consists of **6 interlinked tables** structur
   - At Risk customers can be targeted with promotional offers to reduce churn
   - VIP customers can be retained through loyalty programs
 
----
+### Module 5 — Dynamic Pricing & Ancillary Revenue Analysis
+- **Objective:** Design and develop a dynamic pricing system using Power BI, calculating recommended room prices based on seasonal demand, pricing adjustments, and occupancy sensitivity. Integrate ancillary revenue analysis for data-driven decision-making
+- **New Tables Used:** Ancillary_Transactions (spa, dining, services revenue — 25,000 rows)
+- **New DAX Measures Created:**
+  - `Recommended Price` — dynamically calculates optimized room price using BaseADR × (1 + SeasonAdj + Uplift) × Elasticity
+  - Season adjustments: Winter Peak (+15%), Spring (+5%), Summer (-5%), Monsoon (-10%)
+- **What-If Parameters Created:**
+  - `Price Uplift (%)` — user-controlled slider to simulate pricing strategies (range: -0.20 to 0.20)
+  - `Occupancy Sensitivity` — controls pricing aggressiveness based on demand (range: 0.8 to 1.2)
+- **5 Visualizations on new dashboard page "Revenue Strategy & Dynamic Pricing":**
+  - 💰 **Recommended Price Card** — dynamic KPI card showing real-time recommended price (₹4.89K)
+  - 📊 **Pricing Matrix** — room type vs season matrix with conditional formatting showing prices across all 30 room types and 5 seasons
+  - 🥧 **Ancillary Revenue Pie Chart** — service contribution breakdown (Spa 73%, Services 27%)
+  - 📊 **Ancillary Revenue Trend Chart** — stacked column chart of monthly revenue by service type (Dining, Services, Spa)
+  - 🔽 **Interactive Slicers** — Season, Price Uplift (%), Occupancy Sensitivity for dynamic filtering
+- **Key Insights:**
+  - Winter Peak drives highest recommended prices due to strong demand
+  - Monsoon requires lower pricing to maintain occupancy levels
+  - Spa services contribute the highest ancillary revenue share — strong upselling opportunity
+  - Dynamic pricing parameters enable flexible revenue optimization strategies
 
-## 🛠️ Tools & Technologies
+---
 
 | Tool | Usage |
 |------|-------|
@@ -143,6 +163,8 @@ The dataset was self-generated and consists of **6 interlinked tables** structur
 - **CancellationRate** — Ratio of cancelled to total bookings
 - **NoShowRate** — Percentage of no-show bookings
 - **RefundAmount** — Total revenue lost due to cancellations
+- **Recommended Price** — Dynamically optimized room price based on season and demand
+- **Ancillary Revenue** — Additional service revenue from spa, dining, and services
 
 ---
 
@@ -153,6 +175,9 @@ The dataset was self-generated and consists of **6 interlinked tables** structur
 - At Risk customers identified for re-engagement campaigns
 - Branch-level performance comparison enables resource allocation decisions
 - Room type revenue analysis supports dynamic pricing strategies
+- Dynamic pricing simulation shows Winter Peak drives highest revenue potential
+- Spa services identified as top ancillary revenue contributor for upselling focus
+- Cancellation and no-show patterns quantified to minimize revenue loss
 
 ---
 
@@ -164,14 +189,8 @@ The dataset was self-generated and consists of **6 interlinked tables** structur
 | Domain | Data Analytics & Business Intelligence |
 | Tool | Power BI |
 | Duration | Mar 2026 – Apr 2026 |
-| Modules Completed | 4 of 6 (Final Dashboard & Documentation in progress) |
+| Modules Completed | ✅ 5 of 5 — Project Complete |
 
 ---
 
-## 🚀 Upcoming (Module 5–6)
-- Final interactive dashboard with complete drill-through and branch-level analysis
-- Project documentation and final presentation to external mentors
-
----
-
-> *This project demonstrates end-to-end data analytics skills including data generation, data modeling, DAX-based KPI development, customer segmentation, and interactive dashboard design using Power BI.*
+> *This project demonstrates end-to-end data analytics skills including data generation, data modeling, DAX-based KPI development, customer segmentation, forecasting, dynamic pricing, and interactive dashboard design using Power BI — built as part of the Infosys Springboard Virtual Internship 6.0.*
